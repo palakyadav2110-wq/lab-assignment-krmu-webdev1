@@ -1,225 +1,152 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Inter, Arial;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Full Stack Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="logo"><span class="muted">Hi, I am</span><br/><span class="accent">Full Stack Developer</span></h1>
+      </div>
 
-body {
-  background: #f6f8fc;
-  color: #1a1a1a;
-}
+      <nav class="nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-/* NAVBAR */
-.navbar {
-  background: white;
-  border-bottom: 1px solid #eee;
-  padding: 15px 0;
-}
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2 class="hero-intro">Building modern web applications with <strong>MERN</strong> stack.</h2>
+          <p class="lead">I create responsive and interactive web experiences. I love learning, solving problems, and shipping polished front-end & backend features.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#" download>Download CV</a>
+            <a class="btn btn-outline" href="#contact">Hire Me</a>
+          </div>
+        </div>
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
+        <div class="hero-image">
+          <!-- using user's uploaded file path as requested -->
+          <div class="avatar-frame" aria-hidden="true">
+            <img src="https://static.vecteezy.com/system/resources/previews/048/849/144/non_2x/silhouettes-of-a-women-profile-a-standing-business-people-black-color-isolated-on-white-background-vector.jpg" alt="Profile illustration" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-.nav-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    <!-- ABOUT -->
+    <section id="about" class="container about">
+      <h3 class="section-title">About Me</h3>
+      <p class="about-text">
+        Hello! My name is Palak Yadav, and I am currently learning web development. This is my portfolio where I showcase my projects and skills. I enjoy building modern web applications, learning new frameworks, and improving my craft every day.
+      </p>
+    </section>
 
-.logo {
-  font-size: 22px;
-  font-weight: 700;
-}
+    <!-- SKILLS -->
+    <section id="skills" class="container skills">
+      <h3 class="section-title">My Skills</h3>
+      <div class="skills-row">
+        <div class="skill-card">
+          <h4>HTML</h4>
+          <p class="skill-level">Beginner</p>
+        </div>
+        <div class="skill-card">
+          <h4>CSS</h4>
+          <p class="skill-level">Beginner</p>
+        </div>
+        <div class="skill-card">
+          <h4>JavaScript</h4>
+          <p class="skill-level">Learning</p>
+        </div>
+      </div>
+    </section>
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
+    <!-- PROJECTS -->
+    <section id="projects" class="container projects">
+      <h3 class="section-title">My Projects</h3>
 
-.nav-links a {
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-}
+      <div class="projects-grid">
+        <article class="project">
+          <div class="project-screenshot" role="img" aria-label="Project 1 screenshot"></div>
+          <h4>Project 1</h4>
+          <p class="project-desc">A simple HTML & CSS webpage.</p>
+          <div class="project-links">
+            <a class="small-btn" href="#" target="_blank" rel="noopener">Live Demo</a>
+            <a class="small-btn" href="#" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
 
-.btn-small {
-  padding: 8px 16px;
-  background: #346df1;
-  color: white;
-  border-radius: 5px;
-}
+        <article class="project">
+          <div class="project-screenshot" role="img" aria-label="Project 2 screenshot"></div>
+          <h4>Project 2</h4>
+          <p class="project-desc">Another mini project showing interaction and layout skills.</p>
+          <div class="project-links">
+            <a class="small-btn" href="#" target="_blank" rel="noopener">Live Demo</a>
+            <a class="small-btn" href="#" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-/* HERO SECTION */
-.hero {
-  padding: 60px 0;
-}
+    <!-- CONTACT -->
+    <section id="contact" class="container contact">
+      <h3 class="section-title">Contact Me</h3>
+      <div class="contact-grid">
+        <form class="contact-form" action="#" method="post" onsubmit="return false;">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Enter your name" required />
+          </label>
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
 
-.hero-text h1 {
-  font-size: 42px;
-  font-weight: 800;
-}
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Write a brief message" required></textarea>
+          </label>
 
-.hero-text p {
-  margin: 15px 0;
-  color: #555;
-}
+          <div class="form-actions">
+            <button class="btn" type="submit">Send Message</button>
+          </div>
+        </form>
 
-.hero-buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 12px;
-}
+        <aside class="contact-info">
+          <div class="card">
+            <h4>Get in touch</h4>
+            <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+            <p>GitHub: <a href="#" target="_blank" rel="noopener">github.com/username</a></p>
+            <p>LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/username</a></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
 
-.btn-primary {
-  background: #346df1;
-  color: white;
-  padding: 12px 22px;
-  border-radius: 6px;
-  text-decoration: none;
-}
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> John Doe — Built with HTML & CSS</p>
+    </div>
+  </footer>
 
-.btn-outline {
-  border: 2px solid #346df1;
-  padding: 12px 22px;
-  border-radius: 6px;
-  color: #346df1;
-  text-decoration: none;
-}
-
-.hero-img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-/* LOGOS */
-.logos {
-  margin: 40px auto;
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  opacity: 0.7;
-}
-
-.logos img {
-  height: 40px;
-}
-
-/* FEATURES */
-.features-section {
-  padding: 50px 0;
-  background: #eef3ff;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.feature-card {
-  background: white;
-  padding: 25px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px #e5e9f2;
-}
-
-.feature-card img {
-  width: 55px;
-  margin-bottom: 15px;
-}
-
-/* HOW IT WORKS */
-.how-section {
-  padding: 50px 0;
-}
-
-.how-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.how-card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 3px 12px #e5e9f2;
-}
-
-/* ANALYTICS */
-.analytics {
-  margin: 60px auto;
-  text-align: center;
-}
-
-.analytics-img {
-  width: 200px;
-  margin-top: 20px;
-}
-
-/* PRICING */
-.pricing-section {
-  padding: 60px 0;
-  background: #eef3ff;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.price-card {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px #e5e9f2;
-  text-align: center;
-}
-
-.price-card ul {
-  list-style: none;
-  margin-top: 15px;
-}
-
-.price-card li {
-  margin: 8px 0;
-  color: #555;
-}
-
-.featured {
-  border: 2px solid #346df1;
-}
-
-/* RESPONSIVE */
-@media (max-width: 850px) {
-  .hero-grid,
-  .features-grid,
-  .how-grid,
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .logos {
-    flex-wrap: wrap;
-  }
-}
+  <script>
+    // small script to set year and enable smooth scrolling for internal links
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.documentElement.style.scrollBehavior = 'smooth';
+  </script>
+</body>
+</html>
