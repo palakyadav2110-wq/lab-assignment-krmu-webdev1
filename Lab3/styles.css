@@ -1,152 +1,244 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — Full Stack Developer</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <h1 class="logo"><span class="muted">Hi, I am</span><br/><span class="accent">Full Stack Developer</span></h1>
-      </div>
+/* ----------------------------------------
+   styles.css — Mobile-first responsive
+   Uses rem, %, vw, vh for spacing
+   ---------------------------------------- */
 
-      <nav class="nav">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+/* Base / Reset-ish */
+:root{
+  --bg: #f5f5f6;
+  --card: #ffffff;
+  --accent: #ff6b35; /* orange from screenshot */
+  --muted: #6b6b6b;
+  --primary-blue: #0b4ea2;
+  --shadow: 0 6px 18px rgba(12,12,12,0.06);
+  --radius: 12px;
+  --container-pad: 1.25rem;
+  font-size: 16px;
+}
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h2 class="hero-intro">Building modern web applications with <strong>MERN</strong> stack.</h2>
-          <p class="lead">I create responsive and interactive web experiences. I love learning, solving problems, and shipping polished front-end & backend features.</p>
-          <div class="hero-cta">
-            <a class="btn" href="#" download>Download CV</a>
-            <a class="btn btn-outline" href="#contact">Hire Me</a>
-          </div>
-        </div>
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #e9eef6 0%, var(--bg) 100%);
+  color:#222;
+  line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-        <div class="hero-image">
-          <!-- using user's uploaded file path as requested -->
-          <div class="avatar-frame" aria-hidden="true">
-            <img src="https://static.vecteezy.com/system/resources/previews/048/849/144/non_2x/silhouettes-of-a-women-profile-a-standing-business-people-black-color-isolated-on-white-background-vector.jpg" alt="Profile illustration" />
-          </div>
-        </div>
-      </div>
-    </section>
+/* Container */
+.container{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: var(--container-pad) 0;
+}
 
-    <!-- ABOUT -->
-    <section id="about" class="container about">
-      <h3 class="section-title">About Me</h3>
-      <p class="about-text">
-        Hello! My name is Palak Yadav, and I am currently learning web development. This is my portfolio where I showcase my projects and skills. I enjoy building modern web applications, learning new frameworks, and improving my craft every day.
-      </p>
-    </section>
+/* Header */
+.site-header{
+  background: #0b4ea2;
+  color: white;
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: 0 6px 10px rgba(11,78,162,0.12);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand .logo{margin:0;font-size:1.05rem;line-height:1.05}
+.logo .muted{font-weight:600;opacity:0.95}
+.logo .accent{display:inline-block;color:var(--accent);font-weight:800;font-size:1.25rem}
 
-    <!-- SKILLS -->
-    <section id="skills" class="container skills">
-      <h3 class="section-title">My Skills</h3>
-      <div class="skills-row">
-        <div class="skill-card">
-          <h4>HTML</h4>
-          <p class="skill-level">Beginner</p>
-        </div>
-        <div class="skill-card">
-          <h4>CSS</h4>
-          <p class="skill-level">Beginner</p>
-        </div>
-        <div class="skill-card">
-          <h4>JavaScript</h4>
-          <p class="skill-level">Learning</p>
-        </div>
-      </div>
-    </section>
+/* Navigation */
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem;align-items:center}
+.nav a{
+  color: white;
+  text-decoration:none;
+  padding:0.45rem 0.75rem;
+  border-radius:8px;
+  display:inline-block;
+  font-weight:600;
+  opacity:0.95;
+}
+.nav a:hover, .nav a:focus{background:rgba(255,255,255,0.06)}
 
-    <!-- PROJECTS -->
-    <section id="projects" class="container projects">
-      <h3 class="section-title">My Projects</h3>
+/* HERO */
+.hero{
+  padding:2rem 0;
+  background: linear-gradient(135deg, rgba(11,78,162,0.06) 0%, transparent 60%);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;align-items:center}
+.hero-intro{font-size:1.15rem;margin:0 0 0.5rem}
+.lead{margin:0 0 1rem;color:var(--muted);font-size:0.95rem}
+.hero-cta{display:flex;gap:0.75rem;flex-wrap:wrap}
 
-      <div class="projects-grid">
-        <article class="project">
-          <div class="project-screenshot" role="img" aria-label="Project 1 screenshot"></div>
-          <h4>Project 1</h4>
-          <p class="project-desc">A simple HTML & CSS webpage.</p>
-          <div class="project-links">
-            <a class="small-btn" href="#" target="_blank" rel="noopener">Live Demo</a>
-            <a class="small-btn" href="#" target="_blank" rel="noopener">Source</a>
-          </div>
-        </article>
+/* Avatar */
+.avatar-frame{
+  width: 14.5rem;
+  height: 14.5rem;
+  border-radius:50%;
+  background:linear-gradient(180deg, #cfe6ff, #e9f0ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: var(--shadow);
+  margin:0 auto;
+  padding:0.8rem;
+  animation: float 6s ease-in-out infinite;
+}
+.avatar-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  display:block;
+  box-shadow:0 12px 30px rgba(12,12,12,0.12);
+}
 
-        <article class="project">
-          <div class="project-screenshot" role="img" aria-label="Project 2 screenshot"></div>
-          <h4>Project 2</h4>
-          <p class="project-desc">Another mini project showing interaction and layout skills.</p>
-          <div class="project-links">
-            <a class="small-btn" href="#" target="_blank" rel="noopener">Live Demo</a>
-            <a class="small-btn" href="#" target="_blank" rel="noopener">Source</a>
-          </div>
-        </article>
-      </div>
-    </section>
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  padding:0.6rem 0.9rem;
+  border-radius:10px;
+  font-weight:700;
+  box-shadow:0 6px 18px rgba(255,107,53,0.14);
+  border:none;
+  cursor:pointer;
+}
+.btn-outline{
+  background:transparent;
+  color:var(--primary-blue);
+  border:2px solid rgba(11,78,162,0.08);
+  box-shadow:none;
+}
+.small-btn{
+  text-decoration:none;
+  display:inline-block;
+  padding:0.45rem 0.6rem;
+  border-radius:8px;
+  border:1px solid rgba(11,78,162,0.09);
+  font-weight:700;
+  font-size:0.85rem;
+}
 
-    <!-- CONTACT -->
-    <section id="contact" class="container contact">
-      <h3 class="section-title">Contact Me</h3>
-      <div class="contact-grid">
-        <form class="contact-form" action="#" method="post" onsubmit="return false;">
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" placeholder="Enter your name" required />
-          </label>
+/* Sections */
+.section-title{
+  font-size:1.05rem;
+  margin:1rem 0 0.6rem;
+  color:#222;
+  font-weight:800;
+}
+.about-text{color:var(--muted);font-size:0.95rem;max-width:70ch}
 
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
+/* Skills row (Flexbox) */
+.skills-row{
+  display:flex;
+  gap:1rem;
+  flex-direction:column;
+  margin-top:0.75rem;
+}
+.skill-card{
+  background:var(--primary-blue);
+  color:white;
+  padding:0.9rem;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.skill-card h4{margin:0;font-size:0.95rem}
+.skill-level{font-size:0.8rem;opacity:0.9}
 
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="5" placeholder="Write a brief message" required></textarea>
-          </label>
+/* Projects grid (CSS Grid) */
+.projects-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:1rem;
+  margin-top:0.75rem;
+}
+.project{
+  background:var(--card);
+  border-radius:12px;
+  padding:1rem;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:0.6rem;
+}
+.project-screenshot{
+  background: linear-gradient(180deg, #fff, #f3f6fb);
+  height:7.5rem;
+  border-radius:8px;
+  border:1px solid rgba(11,78,162,0.03);
+  box-shadow:inset 0 -6px 18px rgba(11,78,162,0.02);
+}
 
-          <div class="form-actions">
-            <button class="btn" type="submit">Send Message</button>
-          </div>
-        </form>
+/* Contact section */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:1rem;
+  align-items:start;
+  margin-top:0.5rem;
+}
+.contact-form{background:var(--card);padding:1rem;border-radius:12px;box-shadow:var(--shadow)}
+.contact-form label{display:block;margin-bottom:0.6rem;font-size:0.9rem;color:var(--muted)}
+.contact-form input, .contact-form textarea{
+  width:100%;
+  padding:0.6rem 0.7rem;
+  border:1px solid #e5e7eb;
+  border-radius:8px;
+  font-size:0.95rem;
+  margin-top:0.25rem;
+}
+.contact-info .card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:var(--shadow)}
 
-        <aside class="contact-info">
-          <div class="card">
-            <h4>Get in touch</h4>
-            <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
-            <p>GitHub: <a href="#" target="_blank" rel="noopener">github.com/username</a></p>
-            <p>LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/username</a></p>
-          </div>
-        </aside>
-      </div>
-    </section>
-  </main>
+/* Footer */
+.site-footer{padding:1rem 0;background:transparent;text-align:center;color:var(--muted);font-size:0.9rem}
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> John Doe — Built with HTML & CSS</p>
-    </div>
-  </footer>
+/* Small animations */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
+}
 
-  <script>
-    // small script to set year and enable smooth scrolling for internal links
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.documentElement.style.scrollBehavior = 'smooth';
-  </script>
-</body>
-</html>
+/* Hover effects */
+.project:hover{transform:translateY(-6px);transition:transform 220ms ease}
+.skill-card:hover{transform:translateY(-6px);transition:transform 220ms ease}
+.btn:active{transform:translateY(2px)}
+
+/* Media queries - tablet and up */
+@media (min-width: 720px){
+  .hero-grid{grid-template-columns: 1fr 320px;align-items:center}
+  .skills-row{flex-direction:row}
+  .projects-grid{grid-template-columns: repeat(2, 1fr)}
+  .contact-grid{grid-template-columns: 1fr 320px}
+}
+
+/* Desktop */
+@media (min-width: 1100px){
+  :root{font-size:17px}
+  .header-inner{gap:2rem}
+  .logo .accent{font-size:1.65rem}
+  .avatar-frame{width:18rem;height:18rem}
+  .hero{padding:3rem 0}
+  .hero-intro{font-size:1.25rem}
+  .lead{font-size:1rem}
+}
+
+/* Accessibility visible focus */
+a:focus, button:focus, input:focus, textarea:focus{
+  outline:3px solid rgba(11,78,162,0.12);
+  outline-offset:3px;
+  border-radius:8px;
+}
+
+/* small utilities */
+.muted{color:var(--muted)}
