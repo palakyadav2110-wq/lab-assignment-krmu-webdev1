@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial;
+}
+
+body {
+  background: #f6f8fc;
+  color: #1a1a1a;
+}
+
+/* NAVBAR */
+.navbar {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  background: #346df1;
+  color: white;
+  border-radius: 5px;
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 60px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.hero-text p {
+  margin: 15px 0;
+  color: #555;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: #346df1;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btn-outline {
+  border: 2px solid #346df1;
+  padding: 12px 22px;
+  border-radius: 6px;
+  color: #346df1;
+  text-decoration: none;
+}
+
+.hero-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* LOGOS */
+.logos {
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  opacity: 0.7;
+}
+
+.logos img {
+  height: 40px;
+}
+
+/* FEATURES */
+.features-section {
+  padding: 50px 0;
+  background: #eef3ff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.feature-card {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #e5e9f2;
+}
+
+.feature-card img {
+  width: 55px;
+  margin-bottom: 15px;
+}
+
+/* HOW IT WORKS */
+.how-section {
+  padding: 50px 0;
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.how-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 12px #e5e9f2;
+}
+
+/* ANALYTICS */
+.analytics {
+  margin: 60px auto;
+  text-align: center;
+}
+
+.analytics-img {
+  width: 200px;
+  margin-top: 20px;
+}
+
+/* PRICING */
+.pricing-section {
+  padding: 60px 0;
+  background: #eef3ff;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.price-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px #e5e9f2;
+  text-align: center;
+}
+
+.price-card ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.price-card li {
+  margin: 8px 0;
+  color: #555;
+}
+
+.featured {
+  border: 2px solid #346df1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .hero-grid,
+  .features-grid,
+  .how-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logos {
+    flex-wrap: wrap;
+  }
+}
